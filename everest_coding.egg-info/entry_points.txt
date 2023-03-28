@@ -1,4 +1,0 @@
-[console_scripts]
-delivery_cost = delivery_cost.delivery_cost:main
-delivery_time = delivery_time.delivery_time:main
-
