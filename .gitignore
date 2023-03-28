@@ -1,0 +1,12 @@
+# Ignore build artifacts and generated files
+build/
+*.pyc
+
+# Ignore virtual environment
+venv/
+
+# Ignore distribution files
+everest_coding.egg-info/
+.idea/
+
+# Add below to ignore any other files or directories that you do not want to commit to the repository

@@ -7,7 +7,6 @@ delivery_cost/test_delivery_cost.py
 delivery_time/__init__.py
 delivery_time/delivery.py
 delivery_time/delivery_time.py
-delivery_time/package.py
 delivery_time/test_delivery_time.py
 delivery_time/vehicle.py
 everest_coding.egg-info/PKG-INFO

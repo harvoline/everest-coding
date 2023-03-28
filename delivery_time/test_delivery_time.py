@@ -1,6 +1,9 @@
+import sys
+sys.path.insert(0, "..")
+
 import unittest
 from .delivery import Delivery
-from .package import Package
+from delivery_cost.package import Package
 from .vehicle import Vehicle
 
 

@@ -1,7 +1,12 @@
 #!/usr/bin/env python
+
+# use sys to reuse Package class
+import sys
+sys.path.insert(0,"..")
+
 import math
 from prettytable import PrettyTable
-from .package import Package
+from delivery_cost.package import Package
 from .delivery import Delivery
 from .vehicle import Vehicle
 
@@ -9,7 +14,15 @@ from .vehicle import Vehicle
 def print_packages(packages):
     table = PrettyTable()
 
-    table.field_names = ["Package ID", "Discount", "Total Cost", "Weight", "Distance", "Estimate Delivery Time", "Final Est Delivery Time"]
+    table.field_names = [
+        "Package ID",
+        "Discount",
+        "Total Cost",
+        "Weight",
+        "Distance",
+        "Estimate Delivery Time",
+        "Final Est Delivery Time"
+    ]
 
     for package in packages:
         table.add_row([
