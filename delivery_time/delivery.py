@@ -59,10 +59,12 @@ class Delivery:
         best_total_weight = 0
         longest_route = 0
         longest_id = None
+        highest_no_of_packages = 0
 
         for i in range(1, len(package_list) + 1):
             for combination in combinations(package_list, i):
                 total_weight = 0
+                no_of_packages = len(combination)
 
                 for package in combination:
                     total_weight += package.weight
@@ -70,9 +72,11 @@ class Delivery:
                         longest_route = package.distance
                         longest_id = package.package_id
 
-                if max_weight >= total_weight > best_total_weight:
+                if max_weight >= total_weight > best_total_weight or (
+                        max_weight >= total_weight and no_of_packages > highest_no_of_packages):
                     best_combination = list([package.package_id for package in combination])
                     best_total_weight = total_weight
+                    highest_no_of_packages = no_of_packages
 
         return [best_combination, longest_route, longest_id]
 
