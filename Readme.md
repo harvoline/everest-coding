@@ -13,7 +13,7 @@ To install the python script:
 3. Run the following command:
 
 ```terminal
-pip install .
+    pip install .
 ```
 ** You only need to run this once only. After the installation, you can run both script
 
@@ -30,16 +30,28 @@ pip install .
 
 ---
 
-To run test cases for `delivery_cost`, please run the following command:
+### All Test Cases
+To run all the test cases for both module, you can follow the below steps:
+
+1. Change your directory to `everest-coding`
+2. Run below command
 ```commandline
-python -m unittest .\delivery_cost\test_delivery_cost.py
+    python -m unittest discover -p "test_*.py"
+```
+
+### Individual Test Cases
+
+To run test cases for `delivery_cost` only, please run the following command:
+```commandline
+    python -m unittest .\delivery_cost\test_delivery_cost.py
+    python -m unittest .\delivery_cost\test_delivery_cost_input.py  
 ```
 
 ---
 
-To run test cases for `delivery_time`, please run the following command:
+To run test cases for `delivery_time` only, please run the following command:
 ```commandline
-python -m unittest .\delivery_time\test_delivery_time.py
+    python -m unittest .\delivery_time\test_delivery_time.py
 ```
 
 ** You can run this from `everest-coding` folder
