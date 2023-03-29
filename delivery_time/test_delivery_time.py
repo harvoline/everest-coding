@@ -14,7 +14,7 @@ class TestDelivery(unittest.TestCase):
         base_cost = 100
         max_speed = 70
         max_weight = 200
-        self.delivery = Delivery(base_cost, max_speed, max_weight)
+        self.delivery = Delivery(max_speed)
         vehicle1 = Vehicle(max_speed, max_weight)
         vehicle2 = Vehicle(max_speed, max_weight)
         self.delivery.add_vehicle(vehicle1)

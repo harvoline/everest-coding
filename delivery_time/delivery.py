@@ -3,10 +3,8 @@ from itertools import combinations
 
 
 class Delivery:
-    def __init__(self, base_cost, speed, max_weight):
-        self.base_cost = base_cost
+    def __init__(self, speed):
         self.speed = speed
-        self.max_weight = max_weight
         self.packages = []
         self.history_packages = []
         self.vehicles = []
@@ -19,8 +17,6 @@ class Delivery:
         self.vehicles.append(vehicle)
 
     def estimate_delivery_time(self):
-        import math
-
         for package in self.packages:
             package.estimate_delivery_time = math.floor((package.distance / self.speed) * 100) / 100
             package.final_delivery_time = package.estimate_delivery_time
