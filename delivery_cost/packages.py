@@ -1,4 +1,5 @@
 from .package import Package
+from .input_validation import validate_int_input, validate_string_input, validate_float_input
 
 
 class Packages:
@@ -13,9 +14,9 @@ class Packages:
 
     def run_add_package(self):
         for i in range(self.no_of_packages):
-            package_id = input("Please enter the package ID: ")
-            weight = float(input("Please enter the package weight (in kg): "))
-            distance = float(input("Please enter the package distance (in km): "))
-            offer_code = input("Please enter the offer code (or NA for no discount): ")
+            package_id = validate_string_input("Please enter the package ID: ")
+            weight = validate_float_input("Please enter the package weight (in kg): ")
+            distance = validate_float_input("Please enter the package distance (in km): ")
+            offer_code = validate_string_input("Please enter the offer code (or NA for no discount): ")
             package = Package(package_id, weight, distance, offer_code, self.base_cost)
             self.packages.append(package)

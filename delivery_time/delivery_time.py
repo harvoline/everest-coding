@@ -9,6 +9,7 @@ from prettytable import PrettyTable
 from delivery_cost.package import Package
 from .delivery import Delivery
 from .vehicle import Vehicle
+from delivery_cost.input_validation import validate_int_input, validate_float_input, validate_string_input
 
 
 def print_packages(packages):
@@ -61,12 +62,12 @@ def main():
         delivery.add_package(package4)
         delivery.add_package(package5)
     else:
-        base_cost = float(input("Please enter the base delivery cost: "))
-        no_of_packages = int(input("Please enter the number of packages: "))
-        no_of_vehicles = int(input("Please enter the number of vehicles available: "))
-        max_speed = float(input("Please enter the maximum speed for all the vehicles (in km/h): "))
-        max_weight = float(input("Please enter the maximum weight all the vehicles can carry (in kg): "))
-        delivery = Delivery(base_cost, max_speed, max_weight)
+        base_cost = validate_float_input("Please enter the base delivery cost: ")
+        no_of_packages = validate_int_input("Please enter the number of packages: ")
+        no_of_vehicles = validate_int_input("Please enter the number of vehicles available: ")
+        max_speed = validate_float_input("Please enter the maximum speed for all the vehicles (in km/h): ")
+        max_weight = validate_float_input("Please enter the maximum weight all the vehicles can carry (in kg): ")
+        delivery = Delivery(max_speed)
 
         for _ in range(no_of_vehicles):
             vehicle = Vehicle(max_speed, max_weight)
@@ -74,10 +75,10 @@ def main():
 
         for i in range(no_of_packages):
             print(f"# {i+1}")
-            package_id = input("Please enter the package ID: ")
-            weight = float(input("Please enter the package weight (in kg): "))
-            distance = float(input("Please enter the package distance (in km): "))
-            offer_code = input("Please enter the offer code (or NA for no discount): ")
+            package_id = validate_string_input("Please enter the package ID: ")
+            weight = validate_float_input("Please enter the package weight (in kg): ")
+            distance = validate_float_input("Please enter the package distance (in km): ")
+            offer_code = validate_string_input("Please enter the offer code (or NA for no discount): ")
             package = Package(package_id, weight, distance, offer_code, base_cost)
             delivery.add_package(package)
 

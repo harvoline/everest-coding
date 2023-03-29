@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from .packages import Packages
 from .package import Package
+from .input_validation import validate_int_input
 
 
 def print_packages(packages):
@@ -30,8 +31,8 @@ def main():
         packages.add_package(package3)
         packages.add_package(package4)
     else:
-        base_cost = float(input("Please enter the base delivery cost: "))
-        no_of_packages = int(input("Please enter the number of packages: "))
+        base_cost = validate_int_input("Please enter the base delivery cost: ")
+        no_of_packages = validate_int_input("Please enter the number of packages: ")
         packages = Packages(base_cost, no_of_packages)
         packages.run_add_package()
 
